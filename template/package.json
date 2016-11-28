@@ -5,6 +5,7 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
+    "install": "gulp install",
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o public_html/dist/build.js",
     "serve": "http-server public_html -o -c 1 -a localhost",
     "dev": "npm-run-all --parallel watchify serve",
@@ -28,6 +29,8 @@
   },
   {{/if_eq}}
   "dependencies": {
+    "mkdirp": "^0.5.1",
+    "q": "^1.4.1",
     "vue": "^2.0.1"
   },
   "devDependencies": {
@@ -41,6 +44,8 @@
     "browserify-hmr": "^0.3.1",
     "cross-env": "^2.0.0",
     "envify": "^3.4.1",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
     {{#lint}}
     "eslint": "^3.3.0",
     "eslint-config-standard": "^5.3.5",
