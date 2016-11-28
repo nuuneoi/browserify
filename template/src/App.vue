@@ -38,13 +38,15 @@ function registerThemes(themes) {
 /**********************
  * Export app element
  **********************/
-
-export default {
-  name: 'app',
-  components: {
-    Hello
-  }
-}
+ export default {
+   name: 'app',
+   data () {
+     return {
+       theme: 'starter'
+     }
+   },
+   components: components
+ }
 
 /*************************
  * Hot Module Replacement
