@@ -1,7 +1,6 @@
-<template>
-  <div id="app">
-    <hello></hello>
-  </div>
+<template lang="pug">
+#app
+  component(v-bind:is="theme")
 </template>
 
 <script>
@@ -12,7 +11,33 @@ import locales from 'src/config/locales'
 // Import extra plugin(s)
 Vue.use(VueExtension)
 
-import Hello from './components/Hello.vue'
+
+/*******************************
+ * Pre-require the followings:
+ *  - Themes' Body
+ *  - Themes' locales
+ *******************************/
+var bulk = require('bulk-require')
+var bulkRequired = bulk(__dirname, [
+  './components/themes/*/ThemeBody.vue'
+])
+
+
+/*******************
+ * Register Themes
+ *******************/
+var components = {}
+registerThemes(['starter']); // Feel free to add more themes to the array
+
+function registerThemes(themes) {
+  themes.forEach((theme) => {
+    components[theme] = bulkRequired.components.themes[theme].ThemeBody;
+  })
+}
+
+/**********************
+ * Export app element
+ **********************/
 
 export default {
   name: 'app',
