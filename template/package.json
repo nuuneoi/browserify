@@ -20,7 +20,8 @@
   "browserify": {
     "transform": [
       "babelify",
-      "vueify"
+      "vueify",
+      "bulkify"
     ]
   },
   {{#if_eq build "standalone"}}
@@ -29,9 +30,12 @@
   },
   {{/if_eq}}
   "dependencies": {
+    "bulk-require": "^1.0.0",
     "mkdirp": "^0.5.1",
     "q": "^1.4.1",
-    "vue": "^2.0.1"
+    "vue": "^2.0.1",
+    "vue-i18n": "^4.7.1",
+    "vuex": "^2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -42,6 +46,7 @@
     "babelify": "^7.2.0",
     "browserify": "^13.1.0",
     "browserify-hmr": "^0.3.1",
+    "bulkify": "^1.4.2",
     "cross-env": "^2.0.0",
     "envify": "^3.4.1",
     "gulp": "^3.9.1",
@@ -62,11 +67,15 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
     {{/unit}}
+    "node-sass": "^3.11.1",
     "npm-run-all": "^2.3.0",
     {{#unit}}
     "phantomjs-prebuilt": "^2.1.3",
     {{/unit}}
     "proxyquireify": "^3.0.1",
+    "pug": "^0.1.0",
+    "sass-loader": "^4.0.2",
+    "stylus": "^0.54.5",
     "uglify-js": "^2.5.0",
     "vueify": "^9.0.0",
     "watchify": "^3.4.0"
