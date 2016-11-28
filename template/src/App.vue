@@ -28,3 +28,17 @@ if (module.hot) {
   Vue.config.lang = locales.locale
 }
 </script>
+
+<style lang="stylus">
+@import 'src/styles/global'
+</style>
+
+<style lang="stylus" scoped>
+@import "src/styles/variables"
+
+#app
+  font-family $font-stack
+  height 100%
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+</style>
