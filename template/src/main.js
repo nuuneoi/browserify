@@ -6,9 +6,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
+import locales from './locales'
 
 new Vue({ // eslint-disable-line no-new
   el: '#app',
   store,
+  locales,
   render: (h) => h(App)
 })
