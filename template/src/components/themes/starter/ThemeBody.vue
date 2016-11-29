@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+#theme-body
   hello
 </template>
 
@@ -24,5 +24,17 @@ export default new class extends BaseComponent {
 } ()
 </script>
 
+<style lang="stylus">
+@import './styles/global'
+</style>
+
 <style lang="stylus" scoped>
+@import "./styles/variables"
+
+#theme-body
+  background-color #ddd
+  padding 16px
+  font-family $font-stack
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
 </style>
